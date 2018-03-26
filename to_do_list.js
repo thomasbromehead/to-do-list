@@ -51,9 +51,10 @@ var todoList = {
         for (var i = 0; i < totalTodos; i++){
         this.todos[i].completed = false;
          } 
-      } else {          
+      } else {  
+        for (var i = 0; i < totalTodos; i++){
           this.todos[i].completed = true;
-        }
+         }
       }
     
       this.displayTodos()
@@ -65,4 +66,5 @@ todoList.addTodo("hello");
 todoList.addTodo("You!");
 todoList.toggleCompleted(0);
 todoList.toggleCompleted(1);
+todoList.toggleAll()
 todoList.toggleAll()
