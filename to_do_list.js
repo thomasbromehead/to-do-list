@@ -1,3 +1,5 @@
+// Code goes here
+
 "use strict"
 
 var todoList = {
@@ -7,7 +9,7 @@ var todoList = {
       console.log('Your todo list is empty!');
       } else {
        console.log("My todo list : ")
-       for (i = 0; i < this.todos.length; i++){ 
+       for (var i = 0; i < this.todos.length; i++){ 
          if(this.todos[i].completed === true){
           console.log("(x)",this.todos[i].newTodo);           
          }else{
