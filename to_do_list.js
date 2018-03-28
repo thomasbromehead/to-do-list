@@ -82,8 +82,12 @@ var handlers = {
     todoList.changeTodo(chooseTodo.valueAsNumber, changeTodoText.value);
     chooseTodo.value="";
     changeTodoText.value="";
-    
-  }
+  },
+  deleteTodo: function(){
+    var deleteTodoPositionInput = document.getElementById("deleteTodoPositionInput");
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput="";
+  },
 
 };
 

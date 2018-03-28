@@ -23,9 +23,17 @@
     
     </div>
     <br/>
-    <button onclick="handlers.displayTodos()" style= "background-color:red; color: white; border-radius: 25%;">Display To-Dos</button>
-    <button onclick="handlers.toggleAll()" id="Toggle-Button">Toggle All</button>    
-    
+    <div>
+      <button onclick="handlers.displayTodos()" style= "background-color:red; color: white; border-radius: 25%;">Display To-Dos</button>
+      <button onclick="handlers.toggleAll()" id="Toggle-Button">Toggle All</button>
+    </div>
+         
+    <br/>
+    <div>
+      <button onclick="handlers.deleteTodo()"> Delete</button>
+      <input type="number" name="Deleted" id="deleteTodoPositionInput" value="" />
+      
+    </div>
     <script src="script.js"></script>
   </body>
 
