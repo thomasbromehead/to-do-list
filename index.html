@@ -8,9 +8,21 @@
 
   <body>
     <h1>To do list</h1>
-    <label for="AddTextInput">Add a new item</label>
-    <<button>Add</button>
-    <input type="text" id="AddTextInput">
+    <div>
+    <label for="addTextInput">Add a new item</label>
+    <button onclick="handlers.addTextInput()">Add</button>
+    <input type="text" id="addTextInput">
+    </div>
+    <br/>
+      <div>
+    <label for="changeToDoPosition">Select a To-Do item</label>
+    <input type="number" id="changeToDoPosition">
+    <label for="changeToDoText">Change description</label>
+    <input type="text" id="changeToDoText">
+    <button onclick="handlers.changeTodo()">Change</button>
+    
+    </div>
+    <br/>
     <button onclick="handlers.displayTodos()" style= "background-color:red; color: white; border-radius: 25%;">Display To-Dos</button>
     <button onclick="handlers.toggleAll()" id="Toggle-Button">Toggle All</button>    
     

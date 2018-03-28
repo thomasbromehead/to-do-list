@@ -1,6 +1,6 @@
 // Code goes here
 
-"use strict"
+"use strict";
 
 var todoList = {
   todos: [],
@@ -11,23 +11,23 @@ var todoList = {
        console.log("My todo list : ")
        for (var i = 0; i < this.todos.length; i++){ 
          if(this.todos[i].completed === true){
-          console.log("(x)",this.todos[i].newTodo);           
+          console.log("(x)",this.todos[i].todoText);           
          }else{
-           console.log("( )", this.todos[i].newTodo);
+           console.log("( )", this.todos[i].todoText);
             //print todo as normal
          }   
       }
     }
   },  
-  addTodo: function(newTodo){
+  addTodo: function(todoText){
     this.todos.push({
-      newTodo: newTodo,
+      todoText: todoText,
       completed: false,
     });
     this.displayTodos();
   },
-  changeTodo: function(position, newValue){
-    this.todos[position] = newValue;  
+  changeTodo: function(position, todoText){
+    this.todos[position].todoText = todoText;  
     this.displayTodos();
   },
   deleteTodo: function(position){
@@ -42,19 +42,20 @@ var todoList = {
   toggleAll: function(){
     var totalTodos = this.todos.length;
     var completedTodos = 0;
+   
     
 //     Get number of completed toDos
-    for(var i =0; i < totalTodos; i++){
+    for(var i=0; i < totalTodos; i++){
       if(this.todos[i].completed === true){
         completedTodos++;
         }
     }
     if(completedTodos === totalTodos){
-        for (var i = 0; i < totalTodos; i++){
+        for (var i=0; i < totalTodos; i++){
         this.todos[i].completed = false;
          } 
       } else {  
-        for (var i = 0; i < totalTodos; i++){
+        for (var i=0; i < totalTodos; i++){
           this.todos[i].completed = true;
          }
       }
@@ -71,12 +72,25 @@ var handlers = {
     todoList.toggleAll();
   },
   addTextInput: function(){
-    var addTextInput = document.getElementById("addTextInput");
-    todoList.addTodo(addTextInput.value);
-    addTextInput.value = "";
+    var addNewItem = document.getElementById("addTextInput");
+    todoList.addTodo(addNewItem.value);
+    addNewItem.value = "";
+  },
+  changeTodo: function(){
+    var chooseTodo = document.getElementById("changeToDoPosition");
+    var changeTodoText = document.getElementById("changeToDoText");
+    todoList.changeTodo(chooseTodo.valueAsNumber, changeTodoText.value);
+    chooseTodo.value="";
+    changeTodoText.value="";
+    
   }
 
 };
+
+
+    
+
+
 
 
     
