@@ -63,10 +63,25 @@ var todoList = {
       }
 };
 
-todoList.displayTodos();
-todoList.addTodo("hello");
-todoList.addTodo("You!");
-todoList.toggleCompleted(0);
-todoList.toggleCompleted(1);
-todoList.toggleAll()
-todoList.toggleAll()
+var handlers = {
+  displayTodos: function(){
+    todoList.displayTodos();
+  },
+  toggleAll: function(){
+    todoList.toggleAll();
+  };
+
+};
+
+        //   var displayTodosButton = document.getElementById("Display-Button");
+        //   var toggleAllButton = document.getElementById("Toggle-Button");
+        // //2. We want to run the displayTodos method when someone clicks the display todos button
+        //   displayTodosButton.addEventListener("click", function(){
+        //       todoList.displayTodos();
+        //       });
+              
+        //   toggleAllButton.addEventListener("click", function(){
+        //     todoList.toggleAll();
+    
+  });
+
