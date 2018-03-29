@@ -1,3 +1,4 @@
+
 // Code goes here
 
 "use strict";
@@ -68,9 +69,6 @@ var handlers = {
   displayTodos: function(){
     todoList.displayTodos();
   },
-  toggleAll: function(){
-    todoList.toggleAll();
-  },
   addTextInput: function(){
     var addNewItem = document.getElementById("addTextInput");
     todoList.addTodo(addNewItem.value);
@@ -88,15 +86,67 @@ var handlers = {
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput="";
   },
+  toggleAll: function(){
+    todoList.toggleAll();
+  }
+};
 
+var view = {
+  displayTodos: function(){
+    var todosUl = document.querySelector('ul');
+    todosUl.innerHTML="";
+    for (var i = 0; i<todoList.todos.length; i++){
+      var todoLi = document.createElement('li');
+      todoLi.textContent = todoList.todos[i].todoText;
+      todosUl.appendChild(todoLi);
+    }
+  }  
+  
+  
+  
+  
+  
+  
+  
 };
 
 
-    
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
