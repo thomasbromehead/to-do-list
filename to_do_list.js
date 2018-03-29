@@ -86,7 +86,12 @@ var handlers = {
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput="";
   },
-  toggleAll: function(){
+  toggleCompleted : function(){
+    var toggleCompletedPositionInput = document.getElementById("toggleTodoPositionInput");
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput= "";
+  },
+    toggleAll: function(){
     todoList.toggleAll();
   }
 };
@@ -97,10 +102,20 @@ var view = {
     todosUl.innerHTML="";
     for (var i = 0; i<todoList.todos.length; i++){
       var todoLi = document.createElement('li');
+      var todo = todoList.todos[i];
+      var todoTextWithCompletion = "";
+      
+      if(todo.completed === true){
+        todoTextWithCompletion = '(x)' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( )' + todo.todoText;
+      }
+      
       todoLi.textContent = todoList.todos[i].todoText;
       todosUl.appendChild(todoLi);
     }
-  }  
+  },
+  
   
   
   
